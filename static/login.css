@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cdn.discordapp.com/attachments/779386618838515769/781029799581450240/Desktop_-_7.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.flip3D {
+  width: 90%;
+  height: 90%;
+  /*   margin: 10px; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.flip3D > .front {
+  position: absolute;
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+  background-image: url("https://cdn.discordapp.com/attachments/779386618838515769/781046129419878430/Desktop_-_71.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.flip3D > .back {
+  position: absolute;
+  -webkit-transform: perspective(600px) rotateY(180deg);
+  transform: perspective(600px) rotateY(180deg);
+  background-image: url("https://cdn.discordapp.com/attachments/779386618838515769/781046129419878430/Desktop_-_71.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 7px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: -webkit-transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.flipped .front {
+  -webkit-transform: perspective(600px) rotateY(-180deg);
+  transform: perspective(600px) rotateY(-180deg);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.flipped > .back {
+  -webkit-transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.back,
+.front {
+  display: flex;
+  align-items: center;
+}
+.front__left,
+.front__right {
+  display: flex;
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form__title {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 220%;
+  color: rgb(199, 0, 255);
+  margin-bottom: 40px;
+}
+
+input {
+  width: 80%;
+  height: 50px;
+  border: none;
+  background: #ededed;
+  box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.3),
+    -1px -1px 2px rgba(213, 213, 213, 0.5),
+    inset -5px 5px 10px rgba(213, 213, 213, 0.2),
+    inset 5px -5px 10px rgba(213, 213, 213, 0.2),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.9),
+    inset 5px 5px 13px rgba(213, 213, 213, 0.9);
+  border-radius: 90px;
+  margin-top: 20px;
+  text-align: center;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #afafaf;
+}
+
+.label {
+  align-self: flex-end;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  text-align: right;
+  color: #000000;
+  margin-right: 40px;
+}
+.form__switch {
+  color: rgb(199, 0, 255);
+}
+.form__switch:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+button {
+  width: 283px;
+  height: 50px;
+  border: none;
+
+  background: #41dc63;
+  box-shadow: -1px 1px 2px rgba(26, 88, 40, 0.2),
+    1px -1px 2px rgba(26, 88, 40, 0.2), -1px -1px 2px rgba(104, 255, 158, 0.9),
+    1px 1px 3px rgba(26, 88, 40, 0.9),
+    inset 1px 1px 2px rgba(104, 255, 158, 0.3),
+    inset -1px -1px 2px rgba(26, 88, 40, 0.5);
+  border-radius: 90px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  color: #000000;
+}
+
+
+.back .label {
+  color: #f1f1f1;
+  align-self: flex-start;
+  margin-left: 40px;
+}
+
+.back input {
+  background: #434343;
+  box-shadow: 1px 1px 2px rgba(74, 74, 74, 0.3),
+    -1px -1px 2px rgba(60, 60, 60, 0.5),
+    inset -5px 5px 10px rgba(60, 60, 60, 0.2),
+    inset 5px -5px 10px rgba(60, 60, 60, 0.2),
+    inset -5px -5px 10px rgba(74, 74, 74, 0.9),
+    inset 5px 5px 13px rgba(60, 60, 60, 0.9);
+}
+
+.flip3D img {
+  width: 70%;
+}
+
+@media screen and (max-width: 1000px)
+{
+  
+  .back .front__right{
+    display:none;
+  }
+  .back .front__left{
+    width:100%;
+  }
+  .front .front__left{
+    display:none;
+  }
+  .front .front__right{
+    width:100%;
+  }
+  
+}

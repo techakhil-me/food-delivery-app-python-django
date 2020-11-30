@@ -1,0 +1,643 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://cdn.discordapp.com/attachments/779386618838515769/781029799581450240/Desktop_-_7.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*button {
+  width: 20%;
+  height: 50px;
+  min-width:160px;
+  border: none;
+  background: #41dc63;
+  box-shadow: -1px 1px 2px rgba(26, 88, 40, 0.2),
+    1px -1px 2px rgba(26, 88, 40, 0.2), -1px -1px 2px rgba(104, 255, 158, 0.9),
+    1px 1px 3px rgba(26, 88, 40, 0.9),
+    inset 1px 1px 2px rgba(104, 255, 158, 0.3),
+    inset -1px -1px 2px rgba(26, 88, 40, 0.5);
+  border-radius: 90px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 100%;
+  color: #000000;
+}*/
+
+.cart {
+    position: absolute;
+    background: #ECECEC;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 80%;
+    height: 75%;
+    border-radius: 20px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: -webkit-transform 0.5s linear 0s;
+    transition: transform 0.5s linear 0s;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+.navbar {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    z-index: 100;
+}
+.navbar img {
+    margin: 10px;
+}
+.cart__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.cart__container img {
+    width: 20px;
+    margin-top: -5px;
+}
+.cart__count {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+}
+.nav__right {
+    display: flex;
+    align-items: center;
+}
+.cart__header {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.cart__header__title {
+    font-family: Rubik;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 220%;
+    color: #2F2F2F;
+}
+.cart__header__category {
+    display: flex;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14 px;
+    color: #484848;
+}
+.price {
+    margin-right: 20px;
+}
+.qty {
+    margin-right: 60px;
+}
+.cart__footer {
+    display: flex;
+    justify-content: space-between;
+}
+.cart__total {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.total__title {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #AFAFAF;
+}
+.total__price {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: #C33535;
+}
+.cart__items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: space-around;*/
+    overflow-y: auto;
+}
+.items {
+    width: 100%;
+    height: 50px;
+    /*   padding:10px; */
+    /*   margin:10px; */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ECECEC;
+    box-shadow: -5px 5px 10px rgba(212, 212, 212, 0.2), 5px -5px 10px rgba(212, 212, 212, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(212, 212, 212, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(212, 212, 212, 0.5);
+    border-radius: 18px;
+}
+.item__name {
+    padding: 20px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    color: #000000;
+    text-transform: uppercase;
+}
+.item__cat {
+    display: flex;
+    align-items: center;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #7C797D;
+}
+:root {
+    --primary: #275EFE;
+    --primary-light: #7699FF;
+    --dark: #1C212E;
+    --grey-dark: #3F4656;
+    --grey: #6C7486;
+    --grey-light: #CDD9ED;
+    --white: #FFF;
+    --green: #16BF78;
+    --sand: #DCB773;
+    --sand-light: #EDD9A9;
+}
+.order {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: 0;
+    background: var(--dark);
+    position: relative;
+    height: 63px;
+    width: 240px;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    border-radius: 32px;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-tap-highlight-color: transparent;
+    overflow: hidden;
+    -webkit-transition: -webkit-transform .3s ease;
+    transition: -webkit-transform .3s ease;
+    transition: transform .3s ease;
+    transition: transform .3s ease, -webkit-transform .3s ease;
+}
+.order span {
+    --o: 1;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 19px;
+    line-height: 24px;
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 500;
+    opacity: var(--o);
+    -webkit-transition: opacity .3s ease;
+    transition: opacity .3s ease;
+}
+.order span.default {
+    -webkit-transition-delay: .3s;
+    transition-delay: .3s;
+}
+.order span.success {
+    --offset: 16px;
+    --o: 0;
+}
+.order span.success svg {
+    width: 12px;
+    height: 10px;
+    display: inline-block;
+    vertical-align: top;
+    fill: none;
+    margin: 7px 0 0 4px;
+    stroke: var(--green);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: var(--offset);
+    -webkit-transition: stroke-dashoffset .3s ease;
+    transition: stroke-dashoffset .3s ease;
+}
+.order:active {
+    -webkit-transform: scale(0.96);
+    transform: scale(0.96);
+}
+.order .lines {
+    opacity: 0;
+    position: absolute;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    width: 6px;
+    top: 30px;
+    left: 100%;
+    box-shadow: 15px 0 0 var(--white), 30px 0 0 var(--white), 45px 0 0 var(--white), 60px 0 0 var(--white), 75px 0 0 var(--white), 90px 0 0 var(--white), 105px 0 0 var(--white), 120px 0 0 var(--white), 135px 0 0 var(--white), 150px 0 0 var(--white), 165px 0 0 var(--white), 180px 0 0 var(--white), 195px 0 0 var(--white), 210px 0 0 var(--white), 225px 0 0 var(--white), 240px 0 0 var(--white), 255px 0 0 var(--white), 270px 0 0 var(--white), 285px 0 0 var(--white), 300px 0 0 var(--white), 315px 0 0 var(--white), 330px 0 0 var(--white);
+}
+.order .back, .order .box {
+    --start: var(--white);
+    --stop: var(--grey-light);
+    border-radius: 2px;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--start)), to(var(--stop)));
+    background: linear-gradient(var(--start), var(--stop));
+    position: absolute;
+}
+.order .truck {
+    width: 60px;
+    height: 41px;
+    left: 100%;
+    z-index: 1;
+    top: 11px;
+    position: absolute;
+    -webkit-transform: translateX(24px);
+    transform: translateX(24px);
+}
+.order .truck:before, .order .truck:after {
+    --r: -90deg;
+    content: '';
+    height: 2px;
+    width: 20px;
+    right: 58px;
+    position: absolute;
+    display: block;
+    background: var(--white);
+    border-radius: 1px;
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-transform: rotate(var(--r));
+    transform: rotate(var(--r));
+}
+.order .truck:before {
+    top: 4px;
+}
+.order .truck:after {
+    --r: 90deg;
+    bottom: 4px;
+}
+.order .truck .back {
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 41px;
+    z-index: 1;
+}
+.order .truck .front {
+    overflow: hidden;
+    position: absolute;
+    border-radius: 2px 9px 9px 2px;
+    width: 26px;
+    height: 41px;
+    left: 60px;
+}
+.order .truck .front:before, .order .truck .front:after {
+    content: '';
+    position: absolute;
+    display: block;
+}
+.order .truck .front:before {
+    height: 13px;
+    width: 2px;
+    left: 0;
+    top: 14px;
+    background: -webkit-gradient(linear, left top, left bottom, from(var(--grey)), to(var(--grey-dark)));
+    background: linear-gradient(var(--grey), var(--grey-dark));
+}
+.order .truck .front:after {
+    border-radius: 2px 9px 9px 2px;
+    background: var(--primary);
+    width: 24px;
+    height: 41px;
+    right: 0;
+}
+.order .truck .front .window {
+    overflow: hidden;
+    border-radius: 2px 8px 8px 2px;
+    background: var(--primary-light);
+    -webkit-transform: perspective(4px) rotateY(3deg);
+    transform: perspective(4px) rotateY(3deg);
+    width: 22px;
+    height: 41px;
+    position: absolute;
+    left: 2px;
+    top: 0;
+    z-index: 1;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+.order .truck .front .window:before, .order .truck .front .window:after {
+    content: '';
+    position: absolute;
+    right: 0;
+}
+.order .truck .front .window:before {
+    top: 0;
+    bottom: 0;
+    width: 14px;
+    background: var(--dark);
+}
+.order .truck .front .window:after {
+    width: 14px;
+    top: 7px;
+    height: 4px;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-transform: skewY(14deg);
+    transform: skewY(14deg);
+    box-shadow: 0 7px 0 rgba(255, 255, 255, 0.14);
+}
+.order .truck .light {
+    width: 3px;
+    height: 8px;
+    left: 83px;
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    position: absolute;
+    border-radius: 2px;
+    -webkit-transform: scaleX(0.8);
+    transform: scaleX(0.8);
+    background: #f0dc5f;
+}
+.order .truck .light:before {
+    content: '';
+    height: 4px;
+    width: 7px;
+    opacity: 0;
+    -webkit-transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+    transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+    position: absolute;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+    left: 3px;
+    top: 50%;
+    margin-top: -2px;
+    background: -webkit-gradient(linear, left top, right top, from(#f0dc5f), color-stop(rgba(240, 220, 95, 0.7)), to(rgba(240, 220, 95, 0)));
+    background: linear-gradient(90deg, #f0dc5f, rgba(240, 220, 95, 0.7), rgba(240, 220, 95, 0));
+}
+.order .truck .light.top {
+    top: 4px;
+}
+.order .truck .light.bottom {
+    bottom: 4px;
+}
+.order .box {
+    --start: var(--sand-light);
+    --stop: var(--sand);
+    width: 21px;
+    height: 21px;
+    right: 100%;
+    top: 21px;
+}
+.order .box:before, .order .box:after {
+    content: '';
+    top: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+.order .box:before {
+    height: 3px;
+    margin-top: -1px;
+    background: rgba(0, 0, 0, 0.1);
+}
+.order .box:after {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.15);
+}
+.order.animate .default {
+    --o: 0;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.order.animate .success {
+    --offset: 0;
+    --o: 1;
+    -webkit-transition-delay: 7s;
+    transition-delay: 7s;
+}
+.order.animate .success svg {
+    -webkit-transition-delay: 7.3s;
+    transition-delay: 7.3s;
+}
+.order.animate .truck {
+    -webkit-animation: truck 10s ease forwards;
+    animation: truck 10s ease forwards;
+}
+.order.animate .truck:before {
+    -webkit-animation: door1 2.4s ease forwards .3s;
+    animation: door1 2.4s ease forwards .3s;
+}
+.order.animate .truck:after {
+    -webkit-animation: door2 2.4s ease forwards .6s;
+    animation: door2 2.4s ease forwards .6s;
+}
+.order.animate .truck .light:before, .order.animate .truck .light:after {
+    -webkit-animation: light 10s ease forwards;
+    animation: light 10s ease forwards;
+}
+.order.animate .box {
+    -webkit-animation: box 10s ease forwards;
+    animation: box 10s ease forwards;
+}
+.order.animate .lines {
+    -webkit-animation: lines 10s ease forwards;
+    animation: lines 10s ease forwards;
+}
+@-webkit-keyframes truck {
+    10%, 30% {
+        -webkit-transform: translateX(-164px);
+        transform: translateX(-164px);
+    }
+    40% {
+        -webkit-transform: translateX(-104px);
+        transform: translateX(-104px);
+    }
+    60% {
+        -webkit-transform: translateX(-224px);
+        transform: translateX(-224px);
+    }
+    75%, 100% {
+        -webkit-transform: translateX(24px);
+        transform: translateX(24px);
+    }
+}
+@keyframes truck {
+    10%, 30% {
+        -webkit-transform: translateX(-164px);
+        transform: translateX(-164px);
+    }
+    40% {
+        -webkit-transform: translateX(-104px);
+        transform: translateX(-104px);
+    }
+    60% {
+        -webkit-transform: translateX(-224px);
+        transform: translateX(-224px);
+    }
+    75%, 100% {
+        -webkit-transform: translateX(24px);
+        transform: translateX(24px);
+    }
+}
+@-webkit-keyframes lines {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: scaleY(0.7) translateX(0);
+        transform: scaleY(0.7) translateX(0);
+    }
+    35%, 65% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scaleY(0.7) translateX(-400px);
+        transform: scaleY(0.7) translateX(-400px);
+    }
+}
+@keyframes lines {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: scaleY(0.7) translateX(0);
+        transform: scaleY(0.7) translateX(0);
+    }
+    35%, 65% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: scaleY(0.7) translateX(-400px);
+        transform: scaleY(0.7) translateX(-400px);
+    }
+}
+@-webkit-keyframes light {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+    }
+    40%, 100% {
+        opacity: 1;
+        -webkit-transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+    }
+}
+@keyframes light {
+    0%, 30% {
+        opacity: 0;
+        -webkit-transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.88);
+    }
+    40%, 100% {
+        opacity: 1;
+        -webkit-transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+        transform: perspective(2px) rotateY(-15deg) scaleX(0.94);
+    }
+}
+@-webkit-keyframes door1 {
+    30%, 50% {
+        -webkit-transform: rotate(32deg);
+        transform: rotate(32deg);
+    }
+}
+@keyframes door1 {
+    30%, 50% {
+        -webkit-transform: rotate(32deg);
+        transform: rotate(32deg);
+    }
+}
+@-webkit-keyframes door2 {
+    30%, 50% {
+        -webkit-transform: rotate(-32deg);
+        transform: rotate(-32deg);
+    }
+}
+@keyframes door2 {
+    30%, 50% {
+        -webkit-transform: rotate(-32deg);
+        transform: rotate(-32deg);
+    }
+}
+@-webkit-keyframes box {
+    8%, 10% {
+        -webkit-transform: translateX(40px);
+        transform: translateX(40px);
+        opacity: 1;
+    }
+    25% {
+        -webkit-transform: translateX(112px);
+        transform: translateX(112px);
+        opacity: 1;
+    }
+    26% {
+        -webkit-transform: translateX(112px);
+        transform: translateX(112px);
+        opacity: 0;
+    }
+    27%, 100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+        opacity: 0;
+    }
+}
+@keyframes box {
+    8%, 10% {
+        -webkit-transform: translateX(40px);
+        transform: translateX(40px);
+        opacity: 1;
+    }
+    25% {
+        -webkit-transform: translateX(112px);
+        transform: translateX(112px);
+        opacity: 1;
+    }
+    26% {
+        -webkit-transform: translateX(112px);
+        transform: translateX(112px);
+        opacity: 0;
+    }
+    27%, 100% {
+        -webkit-transform: translateX(0px);
+        transform: translateX(0px);
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .item__name {
+        font-size: 18px;
+    }
+}

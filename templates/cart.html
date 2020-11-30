@@ -1,0 +1,135 @@
+{% load static %}
+{% load tomato_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <link href="{% static 'cart.css' %}?{% now " rel="stylesheet" u=""/>
+                <title>
+                    TOMATO | CART
+                </title>
+            </meta>
+        </meta>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css">
+<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar" id="navigation">
+                <a class="nav__left" href="/">
+                    <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780704481632714792/Tomato.svg"/>
+                </a>
+                <div class="nav__right">
+                    <div class="cart__container">
+                        <div class="cart__count">
+                            {{cart_total}}
+                        </div>
+                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780704880930979850/cart.svg"/>
+                    </div>
+                    <a href="/logout">
+                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780704891168882688/menu.svg"/>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <div class="cart">
+            <div class="cart__header">
+                <div class="cart__header__title">
+                    CART
+                </div>
+                <div class="cart__header__category">
+                    <div class="qty">
+                        QTY
+                    </div>
+                    <div class="price">
+                        PRICE
+                    </div>
+                </div>
+            </div>
+            <div class="cart__items" data-simplebar>
+                {% for item in cart_items%}
+                <div class="items">
+                    <div class="item__name">
+                        {{item.product}}
+                    </div>
+                    <div class="item__cat">
+                        <div class="qty">
+                            {{item.quantity}}
+                        </div>
+                        <div class="price">
+                            {{item.price}}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <form class="cart__footer">
+              {% csrf_token %}
+                <div class="cart__total">
+                    <div class="total__title">
+                        TOTAL
+                    </div>
+                    <div class="total__price">
+                        ₹{{ cart_items|get_total }}
+                    </div>
+                </div>
+                <button class="order" type=submit>
+                    <span class="default">
+                        Complete Order
+                    </span>
+                    <span class="success">
+                        Order Placed
+                        <svg viewbox="0 0 12 10">
+                            <polyline points="1.5 6 4.5 9 10.5 1">
+                            </polyline>
+                        </svg>
+                    </span>
+                    <div class="box">
+                    </div>
+                    <div class="truck">
+                        <div class="back">
+                        </div>
+                        <div class="front">
+                            <div class="window">
+                            </div>
+                        </div>
+                        <div class="light top">
+                        </div>
+                        <div class="light bottom">
+                        </div>
+                    </div>
+                    <div class="lines">
+                    </div>
+                </button>
+            </form>
+        </div>
+        <script type="text/javascript">
+            $('.order').click(function(e) {
+                e.preventDefault();
+                let button = $(this);
+
+                if(!button.hasClass('animate')) {
+                    button.addClass('animate');
+                    setTimeout(() => {
+                        button.removeClass('animate');
+                        window.location.href = "/";
+                    }, 10000);
+                }
+
+                $.ajax({
+              type:'POST',
+              url:window.location.pathname,
+              data:{
+                  'clear':"True",
+                  'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+        },
+        
+      })
+
+            });
+        </script>
+    </body>
+</html>

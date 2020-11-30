@@ -1,0 +1,173 @@
+{% load static %}
+{% load tomato_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+            </meta>
+        </meta>
+        <link href="{% static 'home.css' %}?{% now " rel="stylesheet" u=""/>
+        <title>
+            Tomato | HOME
+        </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+        </script>
+    </head>
+    <body>
+        <img alt="" class="background" src="https://cdn.discordapp.com/attachments/779386618838515769/780701927310229544/Group_33.svg"/>
+        <header>
+            <nav class="navbar" id="navigation">
+                <a class="nav__left" href="/">
+                    <img alt="" class="logo" src="https://cdn.discordapp.com/attachments/779386618838515769/780704481632714792/Tomato.svg"/>
+                </a>
+                <div class="nav__right">
+                    <a class="cart__container" href="/cart">
+                        <div class="cart__count">
+                            {{cart_total}}
+                        </div>
+                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780704880930979850/cart.svg"/>
+                    </a>
+                    <a href="/logout">
+                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780704891168882688/menu.svg"/>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="home__left">
+                <svg fill="none" height="43" viewbox="0 0 41 43" width="41" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M5.0572 32.3883C6.87635 34.6457 8.99803 37.2785 15.2821 35.4357L2.93518 30.2631C2.6474 30.0887 2.33883 29.9541 2 29.8713L2.93518 30.2631C3.73562 30.7483 4.37515 31.5419 5.0572 32.3883Z" fill="#C4C4C4" fill-rule="evenodd">
+                    </path>
+                    <path d="M28.5641 41V33.822C28.6353 32.9376 28.513 32.0485 28.2055 31.2138C27.898 30.3791 27.4122 29.618 26.7805 28.9811C32.7385 28.3319 39 26.1247 39 15.9976C38.9995 13.408 37.9805 10.9178 36.1538 9.0422C37.0188 6.77661 36.9576 4.27237 35.9831 2.0497C35.9831 2.0497 33.7441 1.40052 28.5641 4.79476C24.2152 3.64262 19.631 3.64262 15.2821 4.79476C10.1021 1.40052 7.86308 2.0497 7.86308 2.0497C6.88851 4.27237 6.82735 6.77661 7.69231 9.0422C5.85204 10.9317 4.83197 13.4444 4.84615 16.0533C4.84615 26.1061 11.1077 28.3133 17.0656 29.0367C16.4414 29.6673 15.9599 30.4193 15.6526 31.2437C15.3453 32.0682 15.2191 32.9467 15.2821 33.822V35.4357V41H28.5641Z" fill="#C4C4C4">
+                    </path>
+                    <path d="M15.2821 35.4357C8.99803 37.2785 6.87635 34.6457 5.0572 32.3883C4.37515 31.5419 3.73562 30.7483 2.93518 30.2631M15.2821 35.4357L2.93518 30.2631M15.2821 35.4357V33.822M15.2821 35.4357V41M15.2821 33.822C15.2191 32.9467 15.3453 32.0682 15.6526 31.2437C15.9599 30.4193 16.4414 29.6673 17.0656 29.0367C11.1077 28.3133 4.84615 26.1061 4.84615 16.0533C4.83197 13.4444 5.85204 10.9317 7.69231 9.0422C6.82735 6.77661 6.88851 4.27237 7.86308 2.0497C7.86308 2.0497 10.1021 1.40052 15.2821 4.79476C19.631 3.64262 24.2152 3.64262 28.5641 4.79476C33.7441 1.40052 35.9831 2.0497 35.9831 2.0497C36.9576 4.27237 37.0188 6.77661 36.1538 9.0422C37.9805 10.9178 38.9995 13.408 39 15.9976C39 26.1247 32.7385 28.3319 26.7805 28.9811C27.4122 29.618 27.898 30.3791 28.2055 31.2138C28.513 32.0485 28.6353 32.9376 28.5641 33.822V41H15.2821M15.2821 33.822V41M2.93518 30.2631C2.6474 30.0887 2.33883 29.9541 2 29.8713L2.93518 30.2631Z" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                    </path>
+                </svg>
+                <svg fill="none" height="38" viewbox="0 0 45 38" width="45" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M43 2.01905C41.2154 3.29896 39.2394 4.27788 37.1482 4.91812C36.0258 3.60598 34.5341 2.67597 32.8749 2.25387C31.2157 1.83177 29.4691 1.93795 27.8712 2.55804C26.2732 3.17813 24.9012 4.28223 23.9406 5.72099C22.9799 7.15975 22.4771 8.86377 22.5 10.6026V12.4974C19.2249 12.5837 15.9796 11.8452 13.0532 10.3476C10.1268 8.85002 7.61014 6.63982 5.72727 3.91387C5.72727 3.91387 -1.72727 20.9672 15.0455 28.5465C11.2073 31.1954 6.63516 32.5236 2 32.3361C18.7727 41.8102 39.2727 32.3361 39.2727 10.5457C39.271 10.0179 39.2211 9.49145 39.1236 8.97303C41.0257 7.06589 42.3679 4.65799 43 2.01905V2.01905Z" fill="#C4C4C4" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                    </path>
+                </svg>
+                <svg fill="none" height="41" viewbox="0 0 24 41" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 2H16.5455C14.1344 2 11.8221 2.97455 10.1172 4.70926C8.41234 6.44397 7.45455 8.79675 7.45455 11.25V16.8H2V24.2H7.45455V39H14.7273V24.2H20.1818L22 16.8H14.7273V11.25C14.7273 10.7593 14.9188 10.2888 15.2598 9.94185C15.6008 9.59491 16.0632 9.4 16.5455 9.4H22V2Z" fill="#C4C4C4" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+                    </path>
+                </svg>
+            </div>
+            <div class="home__right">
+            </div>
+        </section>
+        {% for menu in data %}
+        <section class="{{menu.0}}">
+            <div class="row">
+                <div class="row__title">
+                    {{menu.0}}
+                </div>
+                <div class="card__container">
+                    {% for dish in menu.1%}
+                    <div class="card">
+                        <div class="upper">
+                            <img alt="" src="{{dish.1}}">
+                            </img>
+                        </div>
+                        <div class="lower">
+                            <div class="card__left">
+                                <div class="food__title">
+                                    {{dish.0}}
+                                </div>
+                                <div class="food__desc">
+                                    {{dish.2}}
+                                </div>
+                            </div>
+                            <div class="card__right">
+                                <span class="price">
+                                    ₹{{dish.3}}
+                                </span>
+                                <form class="add__item">
+                                    {% csrf_token %}
+                                    <div class="add">
+                                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780468232992718888/plus.svg">
+                                        </img>
+                                    </div>
+                                    <div class="count">
+                                        {% if dish.0 in items_dict %}
+                                        {{ items_dict|get_quantity:dish.0 }}
+                                        {% else %}
+                                        0
+                                        {% endif %}
+                                    </div>
+                                    <div class="remove">
+                                        <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/780468239045230612/minus.svg">
+                                        </img>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+        <script type="text/javascript">
+            var arr = document.getElementsByClassName("card");
+            arr[arr.length - 1].style.margin = "10px 50px 10px 10px";
+
+
+
+            $(function () {
+              $(document).scroll(function () {
+                  var $nav = $(".navbar");
+                  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+                });
+            });
+
+
+            var cart__count = parseInt($('.cart__count').text())
+
+            $('.add').on('click', function(e){
+            e.preventDefault();
+            let quantity = parseInt($(this).parents('.card').find('.count').text()) + 1;
+            $(this).parents('.card').find('.count').html(quantity);
+            cart__count += 1
+            $('.cart__count').html(cart__count)
+        
+          $.ajax({
+            type:'POST',
+            url:window.location.pathname,
+            data:{
+                'product':$(this).parents('.card').find('.food__title').text().replace(/[\t\n]+/g, '').trim(),
+                'quantity':  quantity,
+                'price': $(this).parents('.card').find('.price').text().replace(/[\t\n]+/g, '').trim(),
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+            },
+        
+      })
+
+    });
+
+            $('.remove').on('click', function(e){
+            e.preventDefault();
+            let quantity = parseInt($(this).parents('.card').find('.count').text());
+            if (quantity!=0){
+                quantity -= 1;
+                $(this).parents('.card').find('.count').html(quantity);
+                cart__count -= 1
+                $('.cart__count').html(cart__count)
+            }
+            
+      $.ajax({
+        type:'POST',
+        url:window.location.pathname,
+        data:{
+            'product':$(this).parents('.card').find('.food__title').text().replace(/[\t\n]+/g, '').trim(),
+            'quantity': quantity,
+            'price': $(this).parents('.card').find('.price').text().replace(/[\t\n]+/g, '').trim(),
+            'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+        },
+        
+      })
+
+    });
+        </script>
+    </body>
+</html>

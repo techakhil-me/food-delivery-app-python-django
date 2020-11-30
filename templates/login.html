@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta content="width=device-width, initial-scale=1.0" name="viewport">
+                <link href="{% static 'login.css' %}?{% now " rel="stylesheet" u=""/>
+                <title>
+                    Tomato | LOGIN
+                </title>
+            </meta>
+        </meta>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
+    </script>
+    <body>
+        <div class="flip3D" id="flip">
+            <div class="back">
+                <div class="front__left">
+                    <form class="login_form" enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <div class="form__title">
+                            Sign Up
+                        </div>
+                        {% if not case %}
+                <span style="color:#f79862;
+                             padding-bottom:20px;
+                             text-align:center;">Username or password invalid</span>
+                {% endif %}
+                        <input class="form_input" name="username_new" pattern="[A-Za-z0-9.@_-e]+" placeholder="Username" required type="text">
+                            <input class="form_input" name="password_new" placeholder="Password" required type="password">
+                                <p class="label">
+                                    Done Already?
+                                    <span class="form__switch">
+                                        Sign In
+                                    </span>
+                                </p>
+                                <button type="submit">
+                                    Continue
+                                </button>
+                            </input>
+                        </input>
+                    </form>
+                </div>
+                <div class="front__right">
+                    <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/781058205827727380/Group_5.svg"/>
+                </div>
+            </div>
+            <div class="front">
+                <div class="front__left">
+                    <img alt="" src="https://cdn.discordapp.com/attachments/779386618838515769/781051453930209280/Group_4.svg"/>
+                </div>
+                <div class="front__right">
+                    <form class="login_form" enctype="multipart/form-data" method="POST">
+                        {% csrf_token %}
+                        <div class="form__title">
+                            Sign In
+                        </div>
+                        {% if not case %}
+                <span style="color:#f79862;
+                             padding-bottom:20px;
+                             text-align:center;">Username or password invalid</span>
+                {% endif %}
+                        <input class="form_input" name="username" pattern="[A-Za-z0-9.@_-e]+" placeholder="Username" required type="text">
+                            <input class="form_input" name="password" placeholder="Password" required type="password">
+                                <p class="label">
+                                    New?
+                                    <span class="form__switch">
+                                        Sign Up
+                                    </span>
+                                </p>
+                                <button type="submit">
+                                    Continue
+                                </button>
+                            </input>
+                        </input>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(".form__switch").click(function(){
+  $('.flip3D').toggleClass("flipped");
+});
+        </script>
+    </body>
+</html>
