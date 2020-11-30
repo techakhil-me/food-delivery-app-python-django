@@ -15,7 +15,7 @@ mycursor.execute("INSERT INTO starter VALUES('CHICKEN LOLLIPOP', 'https://cdn.di
 
 mycursor.execute("INSERT INTO maincourse VALUES('NOODLES', 'https://cdn.discordapp.com/attachments/779386618838515769/783012811012833350/image_11.png', 'spicy and tasty noodles with schezwan sauce', 130)")
 mycursor.execute("INSERT INTO maincourse VALUES('FRIED RICE', 'https://thumbs.dreamstime.com/b/chinese-stir-fried-rice-eggs-vegetable-white-plate-white-background-horizontal-photo-chinese-stir-fried-rice-158933918.jpg', 'Indo-Chinese styled rice delicacy', 170)")
-mycursor.execute("INSERT INTO maincourse VALUES('BIRYANI', 'https://cdn.discordapp.com/attachments/779386618838515769/782291752156659782/biryani.png', 'fragrant rice layered with tender-spicy chicken', 220)")
+mycursor.execute("INSERT INTO maincourse VALUES('BIRYANI', 'https://sifu.unileversolutions.com/image/en-LK/recipe-topvisual/2/1260-709/authentic-chicken-biryani-50434132.jpg', 'fragrant rice layered with tender-spicy chicken', 220)")
 mycursor.execute("INSERT INTO maincourse VALUES('NAAN', 'https://cdn.discordapp.com/attachments/779386618838515769/782291749519228928/naan.png', 'soft and chewy naan', 160)")
 
 mycursor.execute("INSERT INTO dessert VALUES('ICE CREAM', 'https://cdn.discordapp.com/attachments/779386618838515769/782291746536161300/icecream.png', 'get your favourite frozen flavour', 100)")
